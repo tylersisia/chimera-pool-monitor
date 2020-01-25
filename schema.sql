@@ -11,7 +11,7 @@ CREATE TABLE IF NOT EXISTS `pools` (
   KEY `type` (`type`), 
   KEY `mergedMining` (`mergedMining`), 
   KEY `mergedMiningIsParentChain` (`mergedMiningIsParentChain`)
-) engine = innodb DEFAULT charset = utf8 ROW_FORMAT = COMPRESSED;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE `pool_polling` (
   `id` VARCHAR(64) NOT NULL, 
@@ -27,7 +27,7 @@ CREATE TABLE `pool_polling` (
   PRIMARY KEY (`id`, `timestamp`), 
   KEY `status` (`status`), 
   KEY `lastBlock` (`lastBlock`)
-) engine = innodb DEFAULT charset = utf8 ROW_FORMAT = COMPRESSED;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE `pool_blocks` (
   `hash` varchar(64) NOT NULL,
@@ -36,4 +36,4 @@ CREATE TABLE `pool_blocks` (
   PRIMARY KEY (`hash`),
   KEY `id` (`id`),
   KEY `height` (`height`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=COMPRESSED;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
